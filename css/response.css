@@ -41,12 +41,18 @@
     #wrap #main #section07 .wrap .gap .container .content .chef-profile > li {float:left;width:50%;}
     #wrap #main #section07 .wrap .gap .container .content .chef-profile > li .profile-gap .profile-box .text-gap {padding:13%;}     
     #wrap #main #section07 .wrap .gap .container .content .chef-profile > li .profile-gap .profile-box {width:76%;margin-left:-38%;}    
-}
-
-@media all and (max-width:980px) {
+    
+    #wrap #main #section08 .wrap .gap .container .content ul li .img-gap .box-wrap {max-width:300px;}
+    #wrap #main #section08 .wrap .gap .container .content ul li {float:left;width:50%;margin:40px 0;}
     #wrap #main #section06 .wrap .gap .container .content .gallery .col {float:none;width:100%;}
     #wrap #main #section06 .wrap .gap .container .content .gallery .col  .galery-gap .bg-img .content-box > ul > li > div {padding:3%;}  
+
+    #wrap #main #section08 {background-attachment:scroll;}
+
+
+
 }
+
 
 @media all and (max-width:980px) and (orientation:landscape){ /* 가로형 */
     #wrap #main #section01 .wrap .gap .container .title img {width:60%;}
@@ -71,8 +77,10 @@
 
 @media all and (max-width:760px){
 
+    #wrap #main #section08 .wrap .gap .container .content ul li .img-gap .box-wrap {width:80%;}
     #wrap #main #section07 .wrap .gap .container .content .chef-profile > li {float:none;width:100%;}
-
+    #wrap #main #section08 .wrap .gap .container .content ul li {float:none;width:100%;}
+    #wrap #main #section08 .wrap .gap .container .title h2 img {width:80%;}    
 }
 
 @media all and (max-width:700px){
