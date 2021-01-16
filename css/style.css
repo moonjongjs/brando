@@ -272,10 +272,33 @@
 
 
 /* 조상 영역들의 높이를 마지막 자손영역의 높이(내용물의 높이에 따라서)가 결정한다. */
-#wrap #main #section09 {width:100%;height:auto;padding:130px 0;}
+#wrap #main #section09 {width:100%;height:auto;padding:130px 0;height:700px;}
 #wrap #main #section09 .wrap {width:100%;height:auto;}
 #wrap #main #section09 .wrap .gap {width:100%;height:auto;}
-#wrap #main #section09 .wrap .gap .container {width:100%;height:932px;/* 임시높이 */}
+#wrap #main #section09 .wrap .gap .container {width:100%;height:auto;}
+#wrap #main #section09 .wrap .gap .container #nav {width:100%;height:auto;}
+#wrap #main #section09 .wrap .gap .container #nav ul {}
+#wrap #main #section09 .wrap .gap .container #nav ul li {}
+#wrap #main #section09 .wrap .gap .container #nav ul li a {}
+#wrap #main #section09 .wrap .gap .container #nav ul li a i {}
+
+
+#wrap #main #section09 .wrap .gap .container .content {width:100%;height:auto;}
+#wrap #main #section09 .wrap .gap .container .content ul {width:100%;height:auto;}
+#wrap #main #section09 .wrap .gap .container .content ul li {float:left;width:25%;}
+#wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap {width:100%;}
+#wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap .box {width:100%;}
+#wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap .box .img-box {width:100%;}
+#wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap .box .img-box a {display:block;}
+#wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap .box .img-box a img {width:100%;}
+
+
+#wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap .box .img-caption {width:100%;background:#fff;}
+#wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap .box .img-caption .caption-gap {padding:30px 20px 40px 20px;text-align:center;}
+#wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap .box .img-caption .caption-gap h3 {}
+#wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap .box .img-caption .caption-gap h4 {}
+
+
 
 
 
