@@ -121,7 +121,7 @@
     </div>
 </header>
 
-<main id="main">
+<main id="main">  <!-- 페이지구분 메인 main index.html / main1-1( main1-1, main1-2 .... main1-9) / main2 /  main3 /..  main6.... -->
    <section id="section01"> <!--  width:100% height:창높이(window.height) Full Screen 배경 이미지 -->
        <div class="wrap"> <!--  width:100%  -->
            <div class="gap"> <!--  width:100%  -->
@@ -565,7 +565,7 @@
                                     <div class="box-wrap">
                                         <div class="img-wrap"><img src="./img/restaurant-img33.png" alt=""></div>
                                         <div class="price-wrap"><div><h4>ONLY</h4><h5>$15.00</h5></div></div>
-                                        <div class="title-wrap"><h3>CHILLY CHEESE STEAK</h3><h4>TOCHILLI / PARMESAN / BASIL</h4></div>
+                                        <div class="title-wrap"><h3>PERFECT KENTUCKY</h3><h4>TOMATOES / PARMESAN / BASIL</h4></div>
                                     </div>
                                 </div>
                             </li>
@@ -574,7 +574,7 @@
                                     <div class="box-wrap">
                                         <div class="img-wrap"><img src="./img/restaurant-img34.png" alt=""></div>
                                         <div class="price-wrap"><div><h4>ONLY</h4><h5>$15.00</h5></div></div>
-                                        <div class="title-wrap"><h3>CHILLY CHEESE STEAK</h3><h4>TOCHILLI / PARMESAN / BASIL</h4></div>
+                                        <div class="title-wrap"><h3>HOT CHICKEN BREAST</h3><h4>OLIVES / PARMESAN / BASIL</h4></div>
                                     </div>
                                 </div>
                             </li>
@@ -583,7 +583,7 @@
                                     <div class="box-wrap">
                                         <div class="img-wrap"><img src="./img/restaurant-img35.png" alt=""></div>
                                         <div class="price-wrap"><div><h4>ONLY</h4><h5>$15.00</h5></div></div>
-                                        <div class="title-wrap"><h3>CHILLY CHEESE STEAK</h3><h4>TOCHILLI / PARMESAN / BASIL</h4></div>
+                                        <div class="title-wrap"><h3>CHILLY CHEESE STEAK</h3><h4>CHILLI / PARMESAN / BASIL</h4></div>
                                     </div>
                                 </div>
                             </li>
@@ -605,112 +605,126 @@
                         <h3><img src="./img/separator.png" alt="separator"></h3>
                     </div>
 
-                    <div id="nav-wrap">
-                        <ul>
-                            <li><a href="#" class='gll-btn'>ALL<i></i></a></li>
-                            <li><a href="#" class='gll-btn'>ALL<i></i></a></li>
-                            <li><a href="#" class='gll-btn'>ALL<i></i></a></li>
-                            <li><a href="#" class='gll-btn'>ALL<i></i></a></li>
-                            <li><a href="#" class='gll-btn'>ALL<i></i></a></li>
+                    <div id="nav">
+                        <ul><!--  inline-flex, inline-block, inline-grid -->
+                            <li><a href="javascript:void(0);" class='gll-btn addNav'>ALL<i></i></a></li>
+                            <li><a href="javascript:void(0);" class='gll-btn'>BREAKFAST<i></i></a></li>
+                            <li><a href="javascript:void(0);" class='gll-btn'>DINNER<i></i></a></li>
+                            <li><a href="javascript:void(0);" class='gll-btn'>DRINKS<i></i></a></li>
+                            <li><a href="javascript:void(0);" class='gll-btn'>LUNCH<i></i></a></li>
                         </ul>
                     </div>
 
                     <div class="content">
-                        <ul>
-                            <li>
+                        <ul class="gallery-container"> <!-- flex container -->
+                            <li class="gallery-item"> <!-- flex item -->
                                 <div class="gallery-gap">
                                     <div class="box">
-                                        <div class="img-box"><a href="#" class="imgBtn"><img src="./img/restaurant-img25.jpg" alt=""></a></div>
+                                        <div class="img-box"><a href="javascript:" class="img-btn"><img src="./img/restaurant-img25.jpg" alt=""></a></div>
                                         <div class="img-caption">
                                             <div class="caption-gap">
                                                 <h3>Soft-Boiled Organic</h3>
                                                 <h4>One Dish - .55</h4>
                                             </div>
+                                            <a href="javascript:" class="caption-btn blind">갤러리 이미지 캡션 링크</a>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li>
+                            <li class="gallery-item"> <!-- flex item -->
                                 <div class="gallery-gap">
                                     <div class="box">
-                                        <div class="img-box"><a href="#" class="imgBtn"><img src="./img/restaurant-img26.jpg" alt=""></a></div>
+                                        <div class="img-box"><a href="javascript:" class="img-btn"><img src="./img/restaurant-img26.jpg" alt=""></a></div>
                                         <div class="img-caption">
                                             <div class="caption-gap">
-                                                <h3>Soft-Boiled Organic</h3>
-                                                <h4>One Dish - .55</h4>
+                                                <h3>The Crepes of Wrath</h3>
+                                                <h4>One Dish - $09.25</h4>
                                             </div>
+                                            <a href="javascript:" class="caption-btn blind">갤러리 이미지 캡션 링크</a>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li>
+                            <li class="gallery-item"> <!-- flex item -->
                                 <div class="gallery-gap">
                                     <div class="box">
-                                        <div class="img-box"><a href="#" class="imgBtn"><img src="./img/restaurant-img27.jpg" alt=""></a></div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="gallery-gap">
-                                    <div class="box">
-                                        <div class="img-box"><a href="#" class="imgBtn"><img src="./img/restaurant-img28.jpg" alt=""></a></div>
+                                        <div class="img-box"><a href="javascript:" class="img-btn"><img src="./img/restaurant-img27.jpg" alt=""></a></div>
                                         <div class="img-caption">
                                             <div class="caption-gap">
-                                                <h3>Soft-Boiled Organic</h3>
-                                                <h4>One Dish - .55</h4>
+                                                <h3>Tang Creamsicle Shake</h3>
+                                                <h4>One Dish - $12.55</h4>
                                             </div>
+                                            <a href="javascript:" class="caption-btn blind">갤러리 이미지 캡션 링크</a>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li>
+                            <li class="gallery-item"> <!-- flex item -->
                                 <div class="gallery-gap">
                                     <div class="box">
-                                        <div class="img-box"><a href="#" class="imgBtn"><img src="./img/restaurant-img29.jpg" alt=""></a></div>
+                                        <div class="img-box"><a href="javascript:" class="img-btn"><img src="./img/restaurant-img28.jpg" alt=""></a></div>
                                         <div class="img-caption">
                                             <div class="caption-gap">
                                                 <h3>Soft-Boiled Organic</h3>
                                                 <h4>One Dish - .55</h4>
                                             </div>
+                                            <a href="javascript:" class="caption-btn blind">갤러리 이미지 캡션 링크</a>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li>
+                            <li class="gallery-item"> <!-- flex item -->
                                 <div class="gallery-gap">
                                     <div class="box">
-                                        <div class="img-box"><a href="#" class="imgBtn"><img src="./img/restaurant-img30.jpg" alt=""></a></div>
+                                        <div class="img-box"><a href="javascript:" class="img-btn"><img src="./img/restaurant-img29.jpg" alt=""></a></div>
                                         <div class="img-caption">
                                             <div class="caption-gap">
                                                 <h3>Soft-Boiled Organic</h3>
                                                 <h4>One Dish - .55</h4>
                                             </div>
+                                            <a href="javascript:" class="caption-btn blind">갤러리 이미지 캡션 링크</a>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li>
+                            <li class="gallery-item"> <!-- flex item -->
                                 <div class="gallery-gap">
                                     <div class="box">
-                                        <div class="img-box"><a href="#" class="imgBtn"><img src="./img/restaurant-img31.jpg" alt=""></a></div>
+                                        <div class="img-box"><a href="javascript:" class="img-btn"><img src="./img/restaurant-img30.jpg" alt=""></a></div>
                                         <div class="img-caption">
                                             <div class="caption-gap">
                                                 <h3>Soft-Boiled Organic</h3>
                                                 <h4>One Dish - .55</h4>
                                             </div>
+                                            <a href="javascript:" class="caption-btn blind">갤러리 이미지 캡션 링크</a>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li>
+                            <li class="gallery-item"> <!-- flex item -->
                                 <div class="gallery-gap">
                                     <div class="box">
-                                        <div class="img-box"><a href="#" class="imgBtn"><img src="./img/restaurant-img32.jpg" alt=""></a></div>
+                                        <div class="img-box"><a href="javascript:" class="img-btn"><img src="./img/restaurant-img31.jpg" alt=""></a></div>
                                         <div class="img-caption">
                                             <div class="caption-gap">
                                                 <h3>Soft-Boiled Organic</h3>
                                                 <h4>One Dish - .55</h4>
                                             </div>
+                                            <a href="javascript:" class="caption-btn blind">갤러리 이미지 캡션 링크</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="gallery-item"> <!-- flex item -->
+                                <div class="gallery-gap">
+                                    <div class="box">
+                                        <div class="img-box"><a href="javascript:" class="img-btn"><img src="./img/restaurant-img32.jpg" alt=""></a></div>
+                                        <div class="img-caption">
+                                            <div class="caption-gap">
+                                                <h3>Soft-Boiled Organic</h3>
+                                                <h4>One Dish - .55</h4>
+                                            </div>
+                                            <a href="javascript:" class="caption-btn blind">갤러리 이미지 캡션 링크</a>
                                         </div>
                                     </div>
                                 </div>
