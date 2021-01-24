@@ -2,8 +2,8 @@
 //IIFE(즉시실행함수 표현식)
 ;(function($, window, document, undefined){ //매개변수
     // ECMA Script 5 (이크마 스크립트 5)
-
     //객체
+
     var brando = {
         init:       function(){ //메서드(리터럴함수)
             this.smoothScrollFn();
@@ -153,38 +153,134 @@
         },
 
         section09Fn:   function(){
-            var $window      = $(window);
-            var imgW         = $('#main #section09 .gallery-item').innerWidth(); //이미지 박스 너비
-            var $galleryItem = $('#main #section09 .gallery-item'); //이미지 박스
-            var per          = 0.75;
-            var imgH         = imgW * per; //이미지 박스 높이
-                $galleryItem.css({ height: imgH });
+           var tot                 = $('#section09 .gallery-item').length;  //전체 갤러리 갯수
+           var hideCount           = 0;
+           var n                   = tot-hideCount;                         //숨김 요소를 제외한 실제 갯수
+           var cols                = 4;                                     //기본 칸수
+           var imgW                = 0;                                     //이미저 너비 
+           var imgH                = imgW*0.75;                             //이미지 높이
+           var rows                = Math.ceil(n/cols);                     //줄수
+           var $gllBtn             = $('#section09 .gll-btn');              //갤러리 상단 내비게이션 버튼
+           var idx                 = 0;                                     //내비게이션 첫번째 버튼 인덱스 값
+           var $winW               = $(window).innerWidth();                //창 너비
+           var $s9GalleryItem      = $('#section09 .gallery-item');         //갤러리 항목(li)
+           var $s9galleryContainer = $('#section09 .gallery-container');    //갤러리 전체 컨테이너 박스
+           var $section09          = $('#section09');                       //섹션09 
+           var a = []; //show() 배열 요소 인덱스 번호  li.show() 
+           var h = []; //hide() 배열 요소 인덱스 번호  li.hide() 
 
-            var $gllBtn      = $('.gll-btn');
 
-
-
-                //반응형 이미지 너비에 따라 높이의 변화
-                //이미지 박스 높이 = 이미지 박스의 너비 * .75
+                //갤러리 반응형 함수
                 function resizeFn(){
-                    imgW    = $('#main #section09 .gallery-item').innerWidth();
-                    imgH    = imgW * per;
-                    $galleryItem.css({ height: imgH });
-                }
-                resizeFn();//로딩시 1호 실행
+                    //창의 너비를 즉각 반영하도록 너비를 가져오기
+                    $winW = $(window).innerWidth();
 
-                $window.resize(function(){ //반응형 너비, 높이 변경시 마다 계속 수행
+                    if( $winW > 1200 ){
+                        cols=4;
+                    }
+                    else if( $winW >=990 ){
+                        cols=3;
+                    }
+                    else if( $winW > 760 ){
+                        cols=2;
+                    }
+                    else{
+                        cols=1;
+                    }
+                    
+                    imgW = $winW/cols;
+                    imgH = imgW*.75;
+
+                    $s9GalleryItem.removeClass('addScale');                    
+                    $s9GalleryItem.css({ width:imgW, height:imgH }); //갤러리 이미지의 너비 높이 구함
+
+                    switch(idx){
+                        case 0: //ALL
+                            h = [];//배열 초기화
+                            a=[0,1,2,3,4,5,6,7];
+                            break;
+                        case 1: //BREAKFAST
+                            h = [0,2];
+                            a=[1,3,4,5,6,7];                           
+                            break;
+                        case 2: //DINNER
+                            h = [1,3,4,5];  
+                            a = [0,2,6,7];
+                            break;
+                        case 3: //DRINKS
+                            h = [0,2,5]; 
+                            a = [1,3,4,6,7];
+                            break;
+                        default:  //LUNCH
+                            h = [0,1,3,6];
+                            a = [2,4,5,7];
+                    } //switch() 끝
+
+
+
+                   //1 hide 요소
+                    $s9GalleryItem.removeAttr('data-hide');                    
+                    for(var i=0; i<h.length; i++){
+                        $s9GalleryItem.eq(h[i]).attr('data-hide',idx).stop().hide();
+                    }
+
+
+                    //2 n 변수 감춰진 요소 뺀 갯수
+                    // n 변수의 변화되는 함수 호출 
+                    hideCount = 0; //함수를 호출 때 마다 초기 값을 0 으로셋팅
+                    $s9GalleryItem.each(function(){ //반복처리
+                        if( $(this).attr('data-hide') ){
+                            hideCount++;
+                        }
+                    });
+                    n = tot - hideCount;  //show() 보이는 갯수
+                    rows = Math.ceil(n/cols);                       //줄수 = 전체 갤러리 갯수/칸수
+                    $s9galleryContainer.css({height:imgH*rows});  //갤러리 전체박스 높이를 구함                   
+
+
+                    //3 show 요소
+                    var k=-1;
+                    for(var i=0; i<rows; i++){
+                        for(var j=0; j<cols; j++){
+                            k++;
+                            if( k>a.length-1 ) break; //반복문 종료
+                            $s9GalleryItem.eq(a[k]).stop().show().animate({left:imgW*j,top:imgH*i});
+                        } 
+                    } 
+                    
+                    $s9GalleryItem.addClass('addScale');
+
+                }//resizeFn() 끝
+
+
+                $(window).resize(function(){
                     resizeFn();
                 });
 
+                setTimeout(resizeFn,10);
 
                 //갤러리 네비게이션 버튼 클릭 이벤트
-                $gllBtn.on({
-                    click: function(){
-                        $gllBtn.removeClass('addNav');
-                        $(this).addClass('addNav');
-                    }
+                $gllBtn.each(function(index){
+                    $(this).on({
+                        click: function(event){
+                            event.preventDefault();
+                            $gllBtn.removeClass('addNav');
+                            $(this).addClass('addNav');
+                            
+                            idx = index; //switch() 변수 idx에 버튼 번호 index를  전달
+                            resizeFn();
+
+                        } //click event 끝
+                    });
                 });
+
+
+
+
+
+
+
+
 
 
 

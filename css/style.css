@@ -272,7 +272,7 @@
 
 
 /* 조상 영역들의 높이를 마지막 자손영역의 높이(내용물의 높이에 따라서)가 결정한다. */
-#wrap #main #section09 {width:100%;height:auto;}
+#wrap #main #section09 {width:100%;height:auto;padding-bottom:0;}
 #wrap #main #section09 .wrap {width:100%;height:auto;}
 #wrap #main #section09 .wrap .gap {width:100%;height:auto;}
 #wrap #main #section09 .wrap .gap .container {width:100%;height:auto;}
@@ -292,14 +292,51 @@
 
 
 #wrap #main #section09 .wrap .gap .container .content {width:100%;height:auto;}
-#wrap #main #section09 .wrap .gap .container .content ul {display:flex;flex-flow:row wrap;width:100%;height:auto;} /*  갤러리 항목 박스(플렉스콘테이너 container) */
-#wrap #main #section09 .wrap .gap .container .content ul li {flex:1 1 25%;height:356.8125px;/* script 높이=너비*0.75 */flex:1 1 25%;overflow:hidden;} /* 8개 항목(플렉스 항목 item ) : 기본 가로로 4개씩 2행으로 배치 */
-#wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap {width:100%;transition:margin-top 0.3s;}
+#wrap #main #section09 .wrap .gap .container .content ul {position:relative;display:flex;flex-flow:row wrap;width:100%;height:calc(356.8125px*2);} /*  갤러리 항목 박스(플렉스콘테이너 container) */
+#wrap #main #section09 .wrap .gap .container .content ul li {position:absolute;flex:1 1 25%;/* script 높이=((1920-17)/4)*0.75 */flex:1 1 25%;overflow:hidden;} /* 8개 항목(플렉스 항목 item ) : 기본 가로로 4개씩 2행으로 배치 */
+
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(1) {width:475.75px;height:356.8125px;left:calc(475.75px*0);top:calc(356.8125px*0);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(2) {width:475.75px;height:356.8125px;left:calc(475.75px*1);top:calc(356.8125px*0);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(3) {width:475.75px;height:356.8125px;left:calc(475.75px*2);top:calc(356.8125px*0);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(4) {width:475.75px;height:356.8125px;left:calc(475.75px*3);top:calc(356.8125px*0);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(5) {width:475.75px;height:356.8125px;left:calc(475.75px*0);top:calc(356.8125px*1);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(6) {width:475.75px;height:356.8125px;left:calc(475.75px*1);top:calc(356.8125px*1);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(7) {width:475.75px;height:356.8125px;left:calc(475.75px*2);top:calc(356.8125px*1);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(8) {width:475.75px;height:356.8125px;left:calc(475.75px*3);top:calc(356.8125px*1);}
+
+/*
+3행 3칸
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(1) {width:634.3333333px;height:475.75px;left:calc(634.3333333px*0);top:calc(475.75px*0);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(2) {width:634.3333333px;height:475.75px;left:calc(634.3333333px*1);top:calc(475.75px*0);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(3) {width:634.3333333px;height:475.75px;left:calc(634.3333333px*2);top:calc(475.75px*0);}
+
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(4) {width:634.3333333px;height:475.75px;left:calc(634.3333333px*0);top:calc(475.75px*1);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(5) {width:634.3333333px;height:475.75px;left:calc(634.3333333px*1);top:calc(475.75px*1);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(6) {width:634.3333333px;height:475.75px;left:calc(634.3333333px*2);top:calc(475.75px*1);}
+
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(7) {width:634.3333333px;height:475.75px;left:calc(634.3333333px*0);top:calc(475.75px*2);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(8) {width:634.3333333px;height:475.75px;left:calc(634.3333333px*1);top:calc(475.75px*2);}
+
+4행 2칸
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(1) {width:951.5px;height:713.625px;left:calc(951.5px*0);top:calc(713.625px*0);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(2) {width:951.5px;height:713.625px;left:calc(951.5px*1);top:calc(713.625px*0);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(3) {width:951.5px;height:713.625px;left:calc(951.5px*0);top:calc(713.625px*1);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(4) {width:951.5px;height:713.625px;left:calc(951.5px*1);top:calc(713.625px*1);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(5) {width:951.5px;height:713.625px;left:calc(951.5px*0);top:calc(713.625px*2);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(6) {width:951.5px;height:713.625px;left:calc(951.5px*1);top:calc(713.625px*2);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(7) {width:951.5px;height:713.625px;left:calc(951.5px*0);top:calc(713.625px*3);}
+#wrap #main #section09 .wrap .gap .container .content ul li:nth-of-type(8) {width:951.5px;height:713.625px;left:calc(951.5px*1);top:calc(713.625px*3);}
+*/
+
+
+#wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap {width:100%;transition:all 0.3s;transform:scale(0);}
+#wrap #main #section09 .wrap .gap .container .content ul li.addScale .gallery-gap {transform:scale(1);}
 #wrap #main #section09 .wrap .gap .container .content ul li:hover .gallery-gap {margin-top:-106px;}
 #wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap .box {width:100%;}
 #wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap .box .img-box {width:100%;}
-#wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap .box .img-box a {display:block;}
-#wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap .box .img-box a img {width:100%;}
+#wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap .box .img-box a {display:block;cursor:url(../img/icon-zoom.png),auto;}
+#wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap .box .img-box a img {width:100%;transition:all .3s;}
+#wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap .box .img-box a:hover img {width:100%;opacity:.6;}
 
 
 #wrap #main #section09 .wrap .gap .container .content ul li .gallery-gap .box .img-caption {position:relative;width:100%;background:#fff;}
