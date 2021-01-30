@@ -28,6 +28,14 @@
     #wrap #header .wrap .gap .container .right-wrap .aside span:nth-child(1) {display:none;}
 }
 
+@media all and (max-width:1024px){
+    #wrap #main #section10 .wrap .gap .container .slide-container {width:80%;}    
+    #wrap #main #section10 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .content-box {max-width:100%;}    
+    #wrap #main #section10 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .content-box .left-wrap {float:none;width:100%;margin:0;text-align:center;}
+    #wrap #main #section10 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .content-box .left-wrap div {margin:0 auto;}    
+    #wrap #main #section10 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .content-box .right-wrap {float:none;width:100%;margin:0;text-align:center;padding-top:30px;}    
+    #wrap #main #section10 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .content-box .right-wrap p {line-height:160%;padding:0;width:60%;margin:0 auto;}    
+}
 @media all and (max-width:980px){
     #wrap #header .wrap .gap .container .mobilebtn-wrap {display:block;}
     #wrap #header .wrap .gap .container .left-wrap #gnb {display:none;}
@@ -69,9 +77,14 @@
 
 @media all and (max-width:780px){
     #wrap #main section {width:100%;height:auto;padding:60px  0;}    
+ 
     #wrap #main #section05 .wrap .gap .container .content .left {float:none;width:100%}
     #wrap #main #section05 .wrap .gap .container .content .right {float:none;width:80%;margin:0 auto;text-align:center;}
     #wrap #main #section05 .wrap .gap .container .content .right .content-gap .text-wrap h3 {font-size:30px;}    
+
+    #wrap #main #section10 .wrap .gap .container .slide-container {width:100%;}  
+    #wrap #main #section10 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .content-box .left-wrap div {width:200px;height:200px;}
+    #wrap #main #section10 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .content-box .right-wrap p {width:80%;}         
 }
 
 
@@ -81,6 +94,11 @@
     #wrap #main #section07 .wrap .gap .container .content .chef-profile > li {float:none;width:100%;}
     #wrap #main #section08 .wrap .gap .container .content ul li {float:none;width:100%;}
     #wrap #main #section08 .wrap .gap .container .title h2 img {width:80%;}    
+    #wrap #main #section09 .wrap .gap .container #nav ul li {display:block;margin:15px 0;}
+    #wrap #main #section09 .wrap .gap .container #nav ul li a {display:inline-block;}
+
+    #wrap #main #section11 .wrap .gap .container .content ul li {float:none;width:100%;}    
+
 }
 
 @media all and (max-width:700px){

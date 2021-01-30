@@ -87,20 +87,23 @@
             //데스크톱, 테블릿, 모바일등의 크기(resize()리사즈)에 반응하도록
 
             var $window       = $(window);
+            var $section1     = $('#main #section01');
             var $section1234  = $('#main #section01, #main #section02, #main #section03, #main #section04');
             var $winH         = $window.innerHeight();  //창높이
             var $box          = $('#main .section0234 .box');
             var $boxH         = $box.innerHeight(); //박스높이 섹션2,3,4 에서만 사용
-
+            var $section1H    = $window.innerHeight();  //창높이
 
 
                 function resizeFn(){
                     $winH = $window.innerHeight();  //창높이 즉시 가져오기
+                    $section1H    = $window.innerHeight();  //창높이
                     $boxH = $box.innerHeight(); //박스높이
                     if( $winH < $boxH+80){
                         $winH = $boxH+80;
                     }                   
-                    $section1234.css({ height:$winH });       //섹션1234의 높이 창 높이로 설정
+                    $section1.css({ height:$section1H });//섹션1의 높이 창 높이로 설정
+                    $section1234.css({ height:$winH });  //섹션1234의 높이 창 높이로 설정
                     $box.css({ marginTop:-($boxH/2) });  //박스높이/2
                 }
 
@@ -274,20 +277,73 @@
                     });
                 });
 
-
-
-
-
-
-
-
-
-
-
-
         },
         section10Fn:   function(){
+            var cnt=0;
+            var $slide     = $('.slide');
+            var $slideWrap = $('.slide-wrap');
+            var $slideConW = $('.slide-container').innerWidth();
 
+                function resizeFn(){
+                    //슬라이드 콘테이너 너비값을 슬라이드 너비로 설정
+                    $slideConW = $('.slide-container').innerWidth();
+                    $slide.css({width:$slideConW});       //슬라이드 1개의 너비
+                    $slideWrap.css({width:$slideConW*3}); //슬라이드 전체 3개의 너비
+                }
+                $(window).resize(function(){
+                    resizeFn();
+                });        
+                setTimeout(resizeFn,10);
+
+
+                //1 메인 슬라이드 함수
+                function mainSlieFn(){
+                    $('.slide-wrap').stop().animate({left:-(975*cnt)},500,'easeInOutExpo');
+                }
+
+                //2 다음 카운트 함수 
+                function nextCountFn(){
+                    cnt++;
+                    if(cnt>2){
+                        cnt=2;
+                    }
+                    mainSlieFn();
+                }
+
+                //2 이전 카운트 함수 
+                function prevCountFn(){
+                    cnt--;
+                    if(cnt<0){
+                        cnt=0;
+                    }
+                    mainSlieFn();
+                }
+
+                //3. 다음 클릭 버튼 이벤트
+                $('.nextBtn').on({
+                    click:  function(event){
+                        event.preventDefault();
+                        nextCountFn();
+                    }
+                });
+
+                //3. 이전 클릭 버튼 이벤트
+                $('.prevBtn').on({
+                    click:  function(event){
+                        event.preventDefault();
+                        prevCountFn();
+                    }
+                });
+
+                //4. 스와이프 터치 이벤트 이벤트
+                $('.slide-container').swipe({
+                    swipeLeft:function(){
+                        nextCountFn(); 
+                    },
+                    swipeRight:function(){
+                        prevCountFn();
+                    }
+                });
         },
         section11Fn:   function(){
 
