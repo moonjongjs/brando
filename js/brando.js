@@ -374,8 +374,6 @@
                 });
 
                 setTimeout(resizeFn,10);
-            
-
 
 
         },
@@ -383,6 +381,86 @@
 
         },
         section13Fn:   function(){
+            //카운터 프로그래밍
+            var n1 = 7800;
+            var n2 = 9870;
+            var n3 = 3500;
+            var n4 = 1660;
+
+            var cnt1=0;
+            var cnt2=0;
+            var cnt3=0;
+            var cnt4=0;
+            var $num1 = $('.num').eq(0);
+            var $num2 = $('.num').eq(1);
+            var $num3 = $('.num').eq(2);
+            var $num4 = $('.num').eq(3);
+            var setId1 = null;
+            var setId2 = null;
+            var setId3 = null;
+            var setId4 = null;
+
+            //정규 표현식 세자리 마다 콤머 찍기
+            var regExp = /\B(?=(\d{3})+(?!\d))/g;
+
+
+
+
+            //카운터1
+            function counterFn1(){
+                cnt1+=10;
+                if(cnt1>=7800){
+                    clearInterval(setId1);
+                    clearInterval(setId2);
+                    clearInterval(setId3);
+                    clearInterval(setId4);
+                    $num1.html( n1.toString().replace(regExp,',') )
+                    $num2.html( n2.toString().replace(regExp,',') );
+                    $num3.html( n3.toString().replace(regExp,',') );
+                    $num4.html( n4.toString().replace(regExp,',') );
+                }
+                $num1.html( cnt1.toString().replace(regExp,',') );
+
+            }
+
+            setId1 = setInterval(counterFn1,12.82051282 );
+
+
+            
+            //카운터2
+            function counterFn2(){
+                cnt2+=10;
+                if(cnt2>=9870){
+                    clearInterval(setId2);
+                }
+                $num2.html( cnt2.toString().replace(regExp,',') );
+            }
+
+            setId2 = setInterval(counterFn2,10.13171226);
+
+
+            //카운터3
+            function counterFn3(){
+                cnt3+=10;
+                if(cnt3>=3500){
+                    clearInterval(setId3);
+                }
+                $num3.html( cnt3.toString().replace(regExp,',') );
+            }
+
+            setId3 = setInterval(counterFn3,28.57142857);
+
+
+            //카운터4
+            function counterFn4(){
+                cnt4+=10;
+                if(cnt4>=1660){
+                    clearInterval(setId4);
+                }
+                $num4.html( cnt4.toString().replace(regExp,',') );
+            }
+
+            setId4 = setInterval(counterFn4,60.24096386);
 
         },
         section14Fn:   function(){
