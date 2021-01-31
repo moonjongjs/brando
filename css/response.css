@@ -90,7 +90,9 @@
 
     #wrap #main #section10 .wrap .gap .container .slide-container {width:100%;}  
     #wrap #main #section10 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .content-box .left-wrap div {width:200px;height:200px;}
-    #wrap #main #section10 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .content-box .right-wrap p {width:80%;}         
+    #wrap #main #section10 .wrap .gap .container .slide-container .slide-view .slide-wrap .slide .content-box .right-wrap p {width:80%;line-height:150%;}         
+
+
 }
 
 
