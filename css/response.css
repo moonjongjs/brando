@@ -81,6 +81,9 @@
 
 @media all and (max-width:900px){
     #wrap #main #section06 .wrap .gap .container .content .gallery .col  .galery-gap .bg-img .content-box > ul > li > div {padding:3.5%;}  
+    #wrap #main #section11 .wrap .gap .container .content ul li {float:none;width:100%;}    
+    #wrap #main #section11 .wrap .gap .container .content ul li .list-gap .right-box .content-gap .text-box p {font-size:3.026315789vw/*23px*/;}
+
 }
 
 @media all and (max-width:780px){
@@ -107,8 +110,6 @@
     #wrap #main #section09 .wrap .gap .container #nav ul li {display:block;margin:15px 0;}
     #wrap #main #section09 .wrap .gap .container #nav ul li a {display:inline-block;}
 
-    #wrap #main #section11 .wrap .gap .container .content ul li {float:none;width:100%;}    
-    #wrap #main #section11 .wrap .gap .container .content ul li .list-gap .right-box .content-gap .text-box p {font-size:3.026315789vw/*23px*/;}
 
     #wrap #main #section12 .wrap .gap .container h3 {font-size:15px;}
     #wrap #main #section12 .wrap .gap .container h2 {font-size:26px;}
@@ -129,6 +130,13 @@
     #wrap #main #section06 .wrap .gap .container .content .gallery .col  .galery-gap .bg-img .content-box {left:5%;width:90%;}   
     #wrap #main #section06 .wrap .gap .container .content .gallery .col  .galery-gap .bg-img .content-box > ul > li > div {padding:5.9%;}      
     #wrap #main #section06 .wrap .gap .container .content .gallery .col  .galery-gap .bg-img .content-box > ul {padding:6.774953% 3%/* 32px */;}    
+    
+      
+    #wrap #main #section11 .wrap .gap .container .content ul li .list-gap .left-box,
+    #wrap #main #section11 .wrap .gap .container .content ul li .list-gap .right-box {float:none;width:100%;}
+    #wrap #main #section11 .wrap .gap .container .content ul li .list-gap .right-box .content-gap .text-box p {font-size:5.25vw/* 26px */;}   
+    #wrap #main #section11 .wrap .gap .container .content ul li .list-gap .right-box::before {content:'';display:block;position:absolute;left:50%;top:-15px;margin-left:-15px;border:15px solid #fff;border-left:15px solid transparent;border-top:15px solid transparent;border-right:15px solid transparent;}     
+
 }
 @media all and (max-width:480px){
     #wrap #main .section0234 .wrap .gap .container .box {height:auto;}
