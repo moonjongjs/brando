@@ -171,7 +171,7 @@
            var $section09          = $('#section09');                       //섹션09 
            var a = []; //show() 배열 요소 인덱스 번호  li.show() 
            var h = []; //hide() 배열 요소 인덱스 번호  li.hide() 
-
+           var $window             = $(window);
 
                 //갤러리 반응형 함수
                 function resizeFn(){
@@ -256,7 +256,7 @@
                 }//resizeFn() 끝
 
 
-                $(window).resize(function(){
+                $window.resize(function(){
                     resizeFn();
                 });
 
@@ -280,17 +280,23 @@
         },
         section10Fn:   function(){
             var cnt=0;
-            var $slide     = $('.slide');
-            var $slideWrap = $('.slide-wrap');
-            var $slideConW = $('.slide-container').innerWidth();
+            var $slide     = $('#section10 .slide');
+            var $slideWrap = $('#section10 .slide-wrap');
+            var $slideCon  = $('#section10 .slide-container');
+            var $slideConW = $('#section10 .slide-container').innerWidth();
+            var $nextBtn   = $('#section10 .nextBtn')
+            var $prevBtn   = $('#section10 .prevBtn')
+            var $window    = $(window);
+
 
                 function resizeFn(){
                     //슬라이드 콘테이너 너비값을 슬라이드 너비로 설정
-                    $slideConW = $('.slide-container').innerWidth();
+                    $slideConW = $slideCon.innerWidth();
                     $slide.css({width:$slideConW});       //슬라이드 1개의 너비
                     $slideWrap.css({width:$slideConW*3}); //슬라이드 전체 3개의 너비
+                    mainSlieFn(); //메인 슬라이드 반응형 left 적용
                 }
-                $(window).resize(function(){
+                $window.resize(function(){
                     resizeFn();
                 });        
                 setTimeout(resizeFn,10);
@@ -298,7 +304,7 @@
 
                 //1 메인 슬라이드 함수
                 function mainSlieFn(){
-                    $('.slide-wrap').stop().animate({left:-(975*cnt)},500,'easeInOutExpo');
+                    $slideWrap.stop().animate({left:-($slideConW*cnt)},500,'easeInOutExpo');
                 }
 
                 //2 다음 카운트 함수 
@@ -320,7 +326,7 @@
                 }
 
                 //3. 다음 클릭 버튼 이벤트
-                $('.nextBtn').on({
+                $nextBtn.on({
                     click:  function(event){
                         event.preventDefault();
                         nextCountFn();
@@ -328,7 +334,7 @@
                 });
 
                 //3. 이전 클릭 버튼 이벤트
-                $('.prevBtn').on({
+                $prevBtn.on({
                     click:  function(event){
                         event.preventDefault();
                         prevCountFn();
@@ -336,7 +342,7 @@
                 });
 
                 //4. 스와이프 터치 이벤트 이벤트
-                $('.slide-container').swipe({
+                $slideCon.swipe({
                     swipeLeft:function(){
                         nextCountFn(); 
                     },
@@ -346,6 +352,31 @@
                 });
         },
         section11Fn:   function(){
+            //반응형으로 $leftBoxW 왼쪽 이미지 박스 너비를 구해서 텍스트 박스 높이을 설정
+            var $window = $(window);
+            var $leftBox   = $('#section11 .left-box');
+            var $rightBox  = $('#section11 .right-box');
+            var $leftBoxW  = $('#section11 .left-box').innerWidth(); //반응형 너비 구하기
+                $leftBox.css({height:$leftBoxW});       //반응형 높이 설정
+                $rightBox.css({height:$leftBoxW});      //반응형 높이 설정
+                $rightBox.css({height:$leftBoxW});      //반응형 높이 설정
+
+
+                function resizeFn(){
+                    $leftBoxW  = $('#section11 .left-box').innerWidth(); //반응형 너비 구하기
+                    $leftBox.css({height:$leftBoxW});       //반응형 높이 설정
+                    $rightBox.css({height:$leftBoxW});      //반응형 높이 설정
+                    $rightBox.css({height:$leftBoxW});      //반응형 높이 설정
+                }
+
+                $window.resize(function(){
+                    resizeFn();
+                });
+
+                setTimeout(resizeFn,10);
+            
+
+
 
         },
         section12Fn:   function(){
