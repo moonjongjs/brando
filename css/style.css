@@ -385,17 +385,30 @@
 
 
 /* 조상 영역들의 높이를 마지막 자손영역의 높이(내용물의 높이에 따라서)가 결정한다. */
-#wrap #main #section12 {position:relative;width:100%;height:auto;padding:130px 0;background:#9cd;}
+#wrap #main #section12 {position:relative;width:100%;height:auto;background:url(../img/restaurant-img40.jpg) no-repeat 50% 0;background-size:cover;}
 #wrap #main #section12 .wrap {width:100%;max-width:1170px;height:auto;margin:0 auto;}
 #wrap #main #section12 .wrap .gap {margin:0 15px;}
-#wrap #main #section12 .wrap .gap .container {width:100%;height:187px;/* 임시높이 */}
+#wrap #main #section12 .wrap .gap .container {width:100%;height:auto;text-align:center;font-family:'Montserrat';}
+#wrap #main #section12 .wrap .gap .container h3 {font-size:20px;color:#626262;font-weight:500;}
+#wrap #main #section12 .wrap .gap .container h2 {font-size:40px;color:#614c45;padding:1.315789%  0  3.508772%  0;font-weight:700;}
+#wrap #main #section12 .wrap .gap .container div {width:100%;}
+#wrap #main #section12 .wrap .gap .container div button {cursor:pointer;display:inline-block;padding:12px  30px;background:#000;color:#fff;border:2px solid #000;font-size:14px;font-weight:600;}
+#wrap #main #section12 .wrap .gap .container div button:hover {background-color:transparent;color:#000;}
 
 
 /* 조상 영역들의 높이를 마지막 자손영역의 높이(내용물의 높이에 따라서)가 결정한다. */
-#wrap #main #section13 {position:relative;width:100%;height:auto;padding:130px 0;}
+#wrap #main #section13 {position:relative;width:100%;height:auto;}
 #wrap #main #section13 .wrap {width:100%;max-width:1170px;height:auto;margin:0 auto;}
 #wrap #main #section13 .wrap .gap {width:100%;}
-#wrap #main #section13 .wrap .gap .container {width:100%;height:200px;/* 임시높이 */}
+#wrap #main #section13 .wrap .gap .container {width:100%;height:auto;}
+#wrap #main #section13 .wrap .gap .container ul {width:100%;}
+#wrap #main #section13 .wrap .gap .container ul li {float:left;width:25%;}
+#wrap #main #section13 .wrap .gap .container ul li div {border-right:1px solid #ccc;text-align:center;}
+#wrap #main #section13 .wrap .gap .container ul li:last-child div {border-right:0;}
+#wrap #main #section13 .wrap .gap .container ul li div h2 {font-size:35px;color:#614c45;}
+#wrap #main #section13 .wrap .gap .container ul li div h3 {font-size:11px;;color:#614c45;padding:15px 0;}
+#wrap #main #section13 .wrap .gap .container ul li div span {display:block;}
+#wrap #main #section13 .wrap .gap .container ul li div span i {font-size:25px;color:#c8a64b;}
 
 
 /* 조상 영역들의 높이를 마지막 자손영역의 높이(내용물의 높이에 따라서)가 결정한다. */
